@@ -54,6 +54,56 @@
   --transition: .35s cubic-bezier(.22,1,.36,1);
   --transition-slow: .7s cubic-bezier(.22,1,.36,1);
 }
+:root[data-theme="dark"] {
+  --accent-1: #f5d0a0;
+  --accent-2: rgb(210, 160, 110);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--accent-1),
+    var(--accent-2)
+  );
+
+  --bg: #0f0b08;
+  --surface: #17110d;
+  --surface-2: #1f1811;
+  --border: #3a2b1c;
+
+  --text: #f7eee4;
+  --text-muted: #c3a98a;
+
+  --success: #66bb6a;
+  --danger: #ef5350;
+
+  /* Fonts */
+  --font-heading: "Urbanist", sans-serif;
+  --font-body: "Urbanist", sans-serif;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 28px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 8px 20px rgb(0 0 0 / .6);
+  --shadow: 0 18px 40px rgb(0 0 0 / .7);
+  --shadow-lg: 0 32px 80px rgb(0 0 0 / .8);
+
+  /* Layout */
+  --container: 1200px;
+  --header-height: 88px;
+
+  /* Spacing */
+  --section-padding: clamp(5rem, 8vw, 8rem);
+  --card-padding: 2rem;
+
+  /* Animation */
+  --transition-fast: .18s ease;
+  --transition: .35s cubic-bezier(.22,1,.36,1);
+  --transition-slow: .7s cubic-bezier(.22,1,.36,1);
+}
+
 
 /* =======================================================
    RESET
