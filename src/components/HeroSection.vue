@@ -16,7 +16,7 @@
           View menu
         </RouterLink>
 
-        <RouterLink class="btn-secondary inline-flex" to="/contact">
+        <RouterLink class="btn-secondary inline-flex" to="/booking">
           Book table
         </RouterLink>
       </div>

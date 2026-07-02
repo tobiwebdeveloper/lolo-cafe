@@ -14,7 +14,7 @@
         <RouterLink to="/about" class="link-special">About</RouterLink>
         <RouterLink to="/menu" class="link-special">Menu</RouterLink>
         <RouterLink to="/gallery" class="link-special">Gallery</RouterLink>
-        <RouterLink to="/contact" class="link-special">Contact</RouterLink>
+        <RouterLink to="/booking" class="link-special">Book a Table</RouterLink>
       </div>
 
       <!-- Mobile -->

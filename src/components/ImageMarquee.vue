@@ -28,40 +28,51 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="relative overflow-hidden w-full">
-    <div
-      ref="track"
-      class="flex items-center gap-5"
-      :style="{ transform: `translateX(-${offset}px)` }"
-    >
-    <div
-      v-for="(img,index) in loopImages"
-      :key="index"
-      class="h-screen flex items-center"
-    >
-      <div class="aspect-[1080/1350] w-[40w] md:w-auto h-full">
-        <img
-          :src="img"
-          class="w-full h-full object-cover opacity-55 hover:opacity-100"
-        />
+  <section class="marquee">
+
+    <div class="marquee-track">
+
+      <div v-for="(img, i) in images.concat(images)" :key="i" class="marquee-item">
+
+        <img :src="img" />
+
       </div>
+
     </div>
-  </div>
+
   </section>
 </template>
 <style scoped>
 .marquee {
   overflow: hidden;
+  width: 100%;
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
-  gap: 2rem;
-  animation: marquee 25s linear infinite;
+  gap: 1.5rem;
+  animation: scroll 25s linear infinite;
 }
 
-@keyframes marquee {
+.marquee-item {
+  flex: 0 0 auto;
+  height: 80vh;
+}
+
+.marquee-item img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.marquee-item img:hover {
+  opacity: 1;
+}
+
+@keyframes scroll {
   from {
     transform: translateX(0);
   }

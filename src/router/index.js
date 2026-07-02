@@ -33,6 +33,11 @@ const routes = [
     name: "Contact",
     component: Contact,
   },
+  {
+    path: "/booking",
+    name: Booking,
+    component: Booking,
+  }
 ];
 
 export default createRouter({

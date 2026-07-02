@@ -64,7 +64,7 @@
     var(--accent-2)
   );
 
-  --bg: #0f0b08;
+  --bg: #16100b;
   --surface: #17110d;
   --surface-2: #1f1811;
   --border: #3a2b1c;
@@ -351,3 +351,6 @@ p {
   color: white;
 }
 
+.rating{
+  color: var(--text);
+}
