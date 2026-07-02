@@ -1,5 +1,5 @@
 <template>
-  <section class="py-24">
+  <section class="py-24 fade-up">
 
     <div class="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
 

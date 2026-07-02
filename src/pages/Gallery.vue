@@ -2,7 +2,7 @@
   <div>
 
     <!-- HERO -->
-    <section class="pt-32 pb-10 text-center">
+    <section v-reveal class="pt-32 pb-10 text-center">
       <div class="container max-w-2xl mx-auto px-6">
 
         <h1 class="text-4xl">
@@ -26,7 +26,7 @@
 
     
     <!-- CTA -->
-    <section class="text-center pb-24">
+    <section v-reveal class="text-center pb-24">
          <div class="container max-w-xl mx-auto px-6">
               
               <h2 class="text-2xl">
@@ -45,7 +45,7 @@
     </section>
 
     <!-- GRID GALLERY -->
-    <section class="py-10">
+    <section v-reveal="100" class="py-10">
       <div class="container mx-auto px-6 w-full">
     
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 /* =======================================================
@@ -27,7 +28,7 @@
   --danger: #c62828;
 
   /* Fonts */
-  --font-heading: "Urbanist", sans-serif;
+  --font-heading: "Bricolage Grotesque", sans-serif;
   --font-body: "Urbanist", sans-serif;
 
   /* Radius */
@@ -75,8 +76,8 @@
   --success: #66bb6a;
   --danger: #ef5350;
 
-  /* Fonts */
-  --font-heading: "Urbanist", sans-serif;
+   /* Fonts */
+  --font-heading: "Bricolage Grotesque", sans-serif;
   --font-body: "Urbanist", sans-serif;
 
   /* Radius */
@@ -200,6 +201,9 @@ h2 {
 p {
   color: var(--text-muted);
 }
+blockquote {
+  font-family: var(--font-heading);
+}
 
 /* =======================================================
    LAYOUT
@@ -236,16 +240,26 @@ p {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
 }
-
-
 .btn-primary {
   position: relative;
   overflow: hidden;
 
-  background: var(--text);
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.05) 1px,
+      rgba(255,255,255,0.05) 2px,
+      transparent 4px,
+      transparent 4px
+    ),
+    var(--text);
+
   color: var(--surface);
+
   border: 1px solid var(--text);
+
   padding: .9rem 1.6rem;
+
   transition: all .3s ease;
 }
 
@@ -254,10 +268,10 @@ p {
   position: absolute;
   inset: 5px;
 
-  border: 1px solid rgba(255,255,255,0.5);
-  opacity: 0;
-  transition: .3s ease;
+  border: 1px solid rgba(255,255,255,.45);
 
+  opacity: 0;
+  transition: opacity .3s ease;
 }
 
 .btn-primary:hover::after {
@@ -353,4 +367,15 @@ p {
 
 .rating{
   color: var(--text);
+}
+/* ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.5s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -8,11 +8,11 @@ import MenuSection from '../components/MenuHero.vue'
 </script>
 
 <template>
-    <HeroSection />
+    <HeroSection v-reveal="0" />
      <div class="divider"></div>
-    <TrustSection />
+    <TrustSection v-reveal="0" />
     <div class="divider"></div>
-    <Testimonials />
-    <MenuSection />
-    <Location />
+    <Testimonials v-reveal="0"/>
+    <MenuSection v-reveal="0"/>
+    <Location v-reveal="50"/>
 </template>

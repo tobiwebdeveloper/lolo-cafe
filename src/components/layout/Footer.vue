@@ -21,7 +21,7 @@ import { PhoneIcon, MapPinIcon, ChatBubbleLeftEllipsisIcon } from "@heroicons/vu
            <RouterLink to="/about" class="link">About</RouterLink>
         <RouterLink to="/menu" class="link">Menu</RouterLink>
         <RouterLink to="/gallery" class="link">Gallery</RouterLink>
-        <RouterLink to="/contact" class="link">Contact</RouterLink>
+        <RouterLink to="/booking" class="link">Book a Table</RouterLink>
       </div>
 
       <!-- Contact -->

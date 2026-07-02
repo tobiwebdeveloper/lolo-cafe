@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import MenuCard from "./MenuCard.vue";
-import menu from "../data/menu.ts";
+import menu from "../data/heromenu.ts";
 
 const categories = computed(() => {
   const unique = new Set(menu.map(item => item.category));
@@ -58,7 +58,7 @@ const categories = computed(() => {
         </p>
 
         <RouterLink
-          to="/contact"
+          to="/booking"
           class="btn-primary inline-flex mt-6"
         >
           Book a Table

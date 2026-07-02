@@ -27,7 +27,7 @@ function submitBooking() {
 }
 </script>
 <template>
-  <section class="py-24 min-h-screen flex items-center justify-center">
+  <section v-reveal class="py-24 min-h-screen flex items-center justify-center">
 
     <div class="container mx-auto max-w-2xl">
 

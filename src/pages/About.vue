@@ -5,8 +5,8 @@ import QuoteBlock from "../components/QuoteBlock.vue";
 </script>
 
 <template>
-<AboutSection />
-<QuoteBlock />
+<AboutSection v-reveal="0" />
+<QuoteBlock v-reveal="0" />
 
-<IntroducingSection />
+<IntroducingSection v-reveal="0"/>
 </template>

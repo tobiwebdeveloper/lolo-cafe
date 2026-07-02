@@ -7,11 +7,11 @@
         Lolo Café Bistro
       </h1>
 
-      <p class="mt-2 text-muted">
+      <p v-reveal="50" class="mt-2 text-muted">
         Fresh coffee. Simple food. Real flavour.
       </p>
 
-      <div class="mt-6 flex items-center justify-center gap-4">
+      <div v-reveal="50" class="mt-6 flex items-center justify-center gap-4">
         <RouterLink class="btn-primary inline-flex" to="/menu">
           View menu
         </RouterLink>
