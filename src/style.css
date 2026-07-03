@@ -379,3 +379,23 @@ blockquote {
   opacity: 1;
   transform: translateY(0);
 }
+/* */
+:deep(.dp__theme_light) {
+  --dp-background-color: var(--surface);
+  --dp-text-color: var(--text);
+  --dp-primary-color: var(--text);
+  --dp-border-color: var(--border);
+  --dp-hover-color: rgba(255,255,255,0.08);
+  --dp-border-radius: 0px;
+}
+
+:deep(.dp__input) {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.9rem 1rem;
+}
+
+:deep(.dp__input:focus) {
+  border-color: var(--text);
+}

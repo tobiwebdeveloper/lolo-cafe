@@ -40,7 +40,7 @@ import MenuSection from "../components/MenuSection.vue"
           Book a table and enjoy it fresh.
         </p>
 
-        <RouterLink to="/contact" class="btn-primary inline-flex mt-6">
+        <RouterLink to="/booking" class="btn-primary inline-flex mt-6">
           Book a Table
         </RouterLink>
 

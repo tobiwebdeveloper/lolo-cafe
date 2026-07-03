@@ -27,7 +27,7 @@
     
     <!-- CTA -->
     <section v-reveal class="text-center pb-24">
-         <div class="container max-w-xl mx-auto px-6">
+         <div class="container max-w-4xl mx-auto px-6">
               
               <h2 class="text-2xl">
                    Want to experience it in person?
@@ -37,7 +37,7 @@
           Book a table and enjoy LOLO Café Bistro.
         </p>
 
-        <RouterLink to="/contact" class="btn-primary inline-flex mt-6">
+        <RouterLink to="/booking" class="btn-primary inline-flex mt-6">
           Book a Table
         </RouterLink>
 

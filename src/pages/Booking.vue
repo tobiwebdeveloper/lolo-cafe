@@ -1,29 +1,45 @@
 <script setup>
 import { ref, computed } from "vue";
+import { supabase } from "../utils/supabase";
 
 const booking = ref({
   guests: 2,
-  date: "",
+  date: null,
   time: "",
   name: "",
   email: "",
   phone: "",
   notes: ""
 });
-const timeSlots = computed(() => {
-  const slots = [];
 
-  for (let hour = 8; hour <= 17; hour++) {
-    slots.push(`${String(hour).padStart(2, "0")}:00`);
-    if (hour !== 17) {
-      slots.push(`${String(hour).padStart(2, "0")}:30`);
-    }
+const loading = ref(false);
+const success = ref(false);
+const errorMsg = ref("");
+const today = new Date().toISOString().split("T")[0];
+
+
+async function submitBooking() {
+  const { data: existing } = await supabase
+    .from("bookings")
+    .select("*")
+    .eq("date", booking.value.date)
+    .eq("time", booking.value.time);
+
+  if (existing && existing.length > 0) {
+    errorMsg.value = "This time slot is already booked.";
+    return;
   }
 
-  return slots;
-});
-function submitBooking() {
-  console.log("BOOKING:", booking.value);
+  const { error } = await supabase
+    .from("bookings")
+    .insert([booking.value]);
+
+  if (error) {
+    errorMsg.value = "Booking failed.";
+    return;
+  }
+
+  success.value = true;
 }
 </script>
 <template>
@@ -47,23 +63,23 @@ function submitBooking() {
         <!-- Guests -->
         <div>
           <label class="text-sm mb-1">Guests</label>
-          <select v-model="booking.guests" class="input">
+          <select v-model="booking.guests" class="input select-input">
             <option v-for="n in 8" :key="n" :value="n">
               {{ n }}
             </option>
           </select>
         </div>
 
-        <!-- Date -->
-        <div>
-          <label class="text-sm mb-1">Date</label>
-          <input type="date" v-model="booking.date" class="input">
-        </div>
+              <div>
+        <label class="text-sm mb-1">Date</label>
+
+      <input type="date" v-model="booking.date" class="input" :min="today">
+      </div>
 
         <!-- Time -->
         <div>
           <label class="text-sm mb-1">Time</label>
-          <select v-model="booking.time" class="input">
+          <select v-model="booking.time" class="input select-input">
             <option disabled value="">Select a time</option>
 
             <option
@@ -105,17 +121,32 @@ function submitBooking() {
         ></textarea>
 
         <!-- Submit -->
-        <button type="submit" class="btn-primary w-full">
-          Confirm Booking
-        </button>
-
+            <button
+      type="submit"
+      class="btn-primary w-full"
+      :disabled="loading"
+    >
+      {{ loading ? "Confirming..." : "Confirm Booking" }}
+    </button>
       </form>
+          <div v-if="success" class="mb-6 p-4  text-green-800">
+      Booking confirmed! We’ll see you soon
+    </div>
+
+      <div v-if="errorMsg" class="mb-6 p-4 text-red-800">
+        {{ errorMsg }}
+      </div>
 
     </div>
 
   </section>
 </template>
 <style scoped>
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.7;
+  cursor: pointer;
+}
 .input {
   width: 100%;
   padding: 0.9rem 1rem;
@@ -128,8 +159,12 @@ function submitBooking() {
   transition: all 0.2s ease;
 }
 
-
 .input:focus {
   border-color: var(--text);
+}
+.select-input {
+  
+  appearance: none;
+  padding-right: 2.5rem;
 }
 </style>
