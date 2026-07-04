@@ -16,6 +16,16 @@ const loading = ref(false);
 const success = ref(false);
 const errorMsg = ref("");
 const today = new Date().toISOString().split("T")[0];
+const timeSlots = computed(() => {
+  const slots = [];
+
+  for (let hour = 8; hour < 17; hour++) {
+    slots.push(`${String(hour).padStart(2, "0")}:00`);
+    slots.push(`${String(hour).padStart(2, "0")}:30`);
+  }
+
+  return slots;
+});
 
 
 async function submitBooking() {

@@ -5,7 +5,7 @@ import Menu from "../pages/Menu.vue";
 import About from "../pages/About.vue";
 import Gallery from "../pages/Gallery.vue";
 import Contact from "../pages/Contact.vue";
-import Booking from "../pages/Booking.vue"
+import Booking from "../pages/Booking.vue";
 
 const routes = [
   {
@@ -35,12 +35,23 @@ const routes = [
   },
   {
     path: "/booking",
-    name: Booking,
+    name: "Booking",
     component: Booking,
-  }
+  },
 ];
 
 export default createRouter({
   history: createWebHistory(),
   routes,
+
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+
+    return {
+      top: 0,
+      behavior: "smooth",
+    };
+  },
 });

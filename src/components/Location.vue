@@ -17,7 +17,7 @@
           </p>
 
           <div class="mt-10">
-            <RouterLink to="/contact"class="btn-primary inline-flex">
+            <RouterLink to="/booking"class="btn-primary inline-flex">
               Get in touch
             </RouterLink>
           </div>
