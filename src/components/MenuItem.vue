@@ -36,7 +36,7 @@ defineProps<{
             ({{ tag }})
         </span>
 
-        </div>
+      </div>
     <!-- Description -->
     <p
       v-if="item.description"
