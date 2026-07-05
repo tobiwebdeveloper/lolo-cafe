@@ -293,54 +293,8 @@ blockquote {
   color: var(--accent-1);
   transform: translateY(-2px);
 }
-.btn-filter {
-  position: relative;
-  overflow: hidden;
 
-  background: transparent;
-  color: var(--text);
 
-  border: 1px solid var(--border);
-  padding: 0.6rem 1.1rem;
-
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-
-  border-radius: 0px; /* sharp like your brand */
-  transition: all 0.3s ease;
-
-  cursor: pointer;
-}
-.btn-filter:hover {
-  border-color: var(--text);
-  transform: translateY(-1px);
-}
-.btn-filter.active {
-  background: var(--text);
-  color: var(--surface);
-  border-color: var(--text);
-}
-.btn-filter::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--text);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-  z-index: 0;
-  opacity: 0.08;
-}
-
-.btn-filter:hover::after {
-  transform: scaleX(1);
-}
-
-.btn-filter > * {
-  position: relative;
-  z-index: 1;
-}
 
 /* =======================================================
    DECORATION
